@@ -83,7 +83,7 @@ export default {
     },
     async updateComuna() {
       const res = await axios.put(
-        http://127.0.0.1:8000/api/comunas/${this.comuna.comu_codi},
+        `http://127.0.0.1:8000/api/comunas/${this.comuna.comu_codi}`,
         this.comuna
       );
       if (res.status == 200) {
@@ -101,11 +101,11 @@ export default {
   mounted() {
     this.comuna.comu_codi = this.$route.params.id;
     axios
-      .get(http://127.0.0.1:8000/api/comunas/${this.comuna.comu_codi})
+      .get(`http://127.0.0.1:8000/api/comunas/${this.comuna.comu_codi}`)
       .then((response) => {
         this.comuna = response.data.comuna;
         this.municipios = response.data.municipios;
       });
-  },
+  },
 };
 </script>

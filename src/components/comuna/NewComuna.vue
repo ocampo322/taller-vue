@@ -109,6 +109,6 @@ export default {
     axios.get("http://127.0.0.1:8000/api/municipios/").then((response) => {
       this.municipios = response.data.municipios;
     });
-  },
+  },
 };
 </script>

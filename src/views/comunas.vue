@@ -55,14 +55,14 @@ export default {
   methods: {
     deleteComuna(codigo) {
       Swal.fire({
-        title: ¿Deseas eliminar la Comuna con ID ${codigo}?,
+        title: `¿Deseas eliminar la Comuna con ID ${codigo}?`,
         showCancelButton: true,
         confirmButtonText: 'Eliminar',
         cancelButtonText: 'Cancelar',
         icon: 'warning'
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(http://127.0.0.1:8000/api/comunas/${codigo})
+          axios.delete(`http://127.0.0.1:8000/api/comunas/${codigo}`)
             .then(response => {
               if (response.data.success) {
                 Swal.fire('¡Eliminado!', '', 'success');
@@ -79,7 +79,7 @@ export default {
       });
     },
     editComuna(id) {
-      this.$router.push({ name: 'EditarComuna', params: { id: ${id} } });
+      this.$router.push({ name: 'EditarComuna', params: { id: `${id}` } });
     },
     newComuna() {
       this.$router.push({ name: 'NewComuna' });
@@ -95,6 +95,6 @@ export default {
         console.error(error);
         Swal.fire('Error al cargar las comunas', '', 'error');
       });
-  }
+  }
 }
 </script>
